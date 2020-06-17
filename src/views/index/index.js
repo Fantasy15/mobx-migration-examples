@@ -4,15 +4,13 @@
  */
 
 import React, {Component} from 'react';
-import {observer}from 'mobx-react';
+import {observer, inject}from 'mobx-react';
 import './index.less';
-import {StoreContext} from 'Src/store';
 
-@observer
+@inject('mainStore') @observer
 class Index extends Component {
-    static contextType = StoreContext;
     render() {
-        const {count, plusCount} = this.context.mainStore;
+        const {count, plusCount} = this.props.mainStore;
         return (
             <div className="index">
                 this is index page,
