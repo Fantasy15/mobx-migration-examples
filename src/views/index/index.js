@@ -3,13 +3,13 @@
  * @description index component
  */
 
-import React, {useContext} from 'react';
+import React from 'react';
 import {observer}from 'mobx-react';
 import './index.less';
-import {StoreContext} from 'Src/store';
+import useStores from 'Src/store/useStores';
 
 const Index = observer(() => {
-    const {count, plusCount} = useContext(StoreContext).mainStore;
+    const {count, plusCount} = useStores().mainStore;
     return (
         <div className="index">
             this is index page,

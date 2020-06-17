@@ -5,7 +5,7 @@
 
 import React, { Component } from 'react';
 import { HashRouter as Router, Route, Switch, Link} from 'react-router-dom';
-import {StoreContext, store} from './store';
+import {Provider} from 'mobx-react';
 
 import Index from './views/index';
 import About from './views/about';
@@ -13,7 +13,7 @@ import About from './views/about';
 class App extends Component {
     render() {
         return (
-            <StoreContext.Provider value={store}>
+            <Provider {...this.props.store}>
                 <Router>
                     <div>
                         <ul>
@@ -34,7 +34,7 @@ class App extends Component {
                         </Switch>
                     </div>
                 </Router>
-            </StoreContext.Provider >
+            </Provider>
         )
     }
 }
