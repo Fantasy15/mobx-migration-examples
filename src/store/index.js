@@ -15,4 +15,4 @@ class RootStore {
 }
 
 export const store = new RootStore();
-export const StoreContext = React.createContext({});
+export const StoreContext = React.createContext(store);
